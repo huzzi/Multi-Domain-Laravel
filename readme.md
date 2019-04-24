@@ -46,7 +46,7 @@ Let's assume the app will be running on the **app.example.com** domain, so your 
 In this case, your **.env** file may looks as follow:
 ```
 APP_URL=http://app.example.com
-APP_DOMAIN=app.example.com
+APP_DOMAIN=example.com
 
 SESSION_DOMAIN='.example.com'
 
