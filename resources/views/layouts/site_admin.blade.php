@@ -12,14 +12,14 @@
     <script defer src="//use.fontawesome.com/releases/v5.0.9/js/all.js"></script>
 
 
-    <link rel="stylesheet" href="{{ mix('shop/admin/css/app.css') }}">
+    <link rel="stylesheet" href="{{ mix('site/admin/css/app.css') }}">
 
     <title>@yield('title', 'Demo') - {{ config('app.name') }}</title>
 </head>
 <body>
 <div class="sidebar-main">
     <div class="sidebar-header">
-        <a href="{{ domain_route('shop.admin.home') }}" title="{{ config('app.name') }}"><img src="{{ asset('shop/admin/img/logo.png') }}"></a>
+        <a href="{{ domain_route('site.admin.home') }}" title="{{ config('app.name') }}"><img src="{{ asset('site/admin/img/logo.png') }}"></a>
     </div>
     <ul class="sidebar-nav">
         <li class="nav-item active"><a class="item" href="#" title="Dashboard"><i class="icon fas fa-home"></i></a></li>
@@ -27,12 +27,12 @@
         <li class="nav-item"><a class="item" href="#" title="Customers"><i class="icon fas fa-users"></i></a></li>
         <li class="nav-item"><a class="item" href="#" title="Settings"><i class="icon fas fa-cog"></i></a></li>
         <li class="nav-item divider"></li>
-        <li class="nav-item filled reverse"><a class="item" href="{{ domain_route('shop.home') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" title="Logout"><i class="icon fas fa-power-off"></i></a></li>
+        <li class="nav-item filled reverse"><a class="item" href="{{ domain_route('site.home') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" title="Logout"><i class="icon fas fa-power-off"></i></a></li>
     </ul>
 </div>
 
 <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-    <a class="navbar-brand" href="{{ domain_route('shop.admin.home') }}">{{ shop()->company_name }}</a>
+    <a class="navbar-brand" href="{{ domain_route('site.admin.home') }}">{{ site()->company_name }}</a>
 
 
 
@@ -54,7 +54,7 @@
         </ul>
 
         <div class="mr-auto">
-            <a class="btn btn-outline-secondary btn-sm" target="_blank" href="{{ domain_route('shop.home') }}">Go to storefront &rarr;</a>
+            <a class="btn btn-outline-secondary btn-sm" target="_blank" href="{{ domain_route('site.home') }}">Go to storefront &rarr;</a>
         </div>
 
 
@@ -68,7 +68,7 @@
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#">Settings</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{ domain_route('shop.home') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                    <a class="dropdown-item" href="{{ domain_route('site.home') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                 </div>
             </li>
         </ul>
@@ -85,7 +85,7 @@
 </div>
 
 
-<script src="{{ mix('shop/admin/js/app.js') }}"></script>
-<form id="logout-form" action="{{ domain_route('shop.logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
+<script src="{{ mix('site/admin/js/app.js') }}"></script>
+<form id="logout-form" action="{{ domain_route('site.logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
 </body>
 </html>

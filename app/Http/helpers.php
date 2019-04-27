@@ -1,20 +1,20 @@
 <?php
-if (!function_exists('shop')) {
+if (!function_exists('site')) {
     /**
      * Get shop by subdomain
      *
      * @param null $subdomain
-     * @return \App\Shop
+     * @return \App\Models\Site
      */
 
-    function shop($subdomain = null)
+    function site($subdomain = null)
     {
         $subdomain = $subdomain ?: request()->route('subdomain');
-        $shop = \App\Shop::where('domain', $subdomain)->first();
-        if (!$shop) {
-            return new \App\Shop;
+        $site = \App\Models\Site::where('domain', $subdomain)->first();
+        if (!$site) {
+            return new \App\Models\Site;
         }
-        return $shop;
+        return $site;
     }
 }
 
@@ -23,7 +23,7 @@ if (!function_exists('domain')) {
      * Get current domain
      *
      * @param null $subdomain
-     * @return \App\Shop
+     * @return \App\Models\Site
      */
 
     function domain()

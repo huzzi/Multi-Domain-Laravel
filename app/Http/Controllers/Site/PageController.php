@@ -1,14 +1,15 @@
-<?php
+<?php 
 
-namespace App\Http\Controllers\Shop;
+namespace app\Http\Controllers\Site;
 
 use Illuminate\Http\Request;
+
 use App\Http\Controllers\Controller;
 
 class PageController extends Controller
 {
     public function home()
     {
-        return view('shop.home');
+        return view('site.home');
     }
 }

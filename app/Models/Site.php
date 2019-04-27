@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Shop extends Model
+class Site extends Model
 {
 
 
@@ -13,7 +13,7 @@ class Shop extends Model
      */
     public function customers()
     {
-        return $this->hasMany('App\Customer');
+        return $this->hasMany('App\Models\Customer');
     }
 
     /**
@@ -21,7 +21,7 @@ class Shop extends Model
      */
     public function managers()
     {
-        return $this->hasMany('App\Manager');
+        return $this->hasMany('App\Models\Manager');
     }
 
     /**
@@ -29,7 +29,7 @@ class Shop extends Model
      */
     public function owners()
     {
-        return $this->hasMany('App\Manager')->where('is_owner', '=', '1');
+        return $this->hasMany('App\Models\Manager')->where('is_owner', '=', '1');
     }
 
 

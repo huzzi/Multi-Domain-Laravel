@@ -1,4 +1,4 @@
-@extends('layouts.shop')
+@extends('layouts.site')
 
 @section('title', 'Registration')
 

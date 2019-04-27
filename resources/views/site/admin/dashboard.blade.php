@@ -1,4 +1,4 @@
-@extends('layouts.shop_admin')
+@extends('layouts.site_admin')
 
 @section('title', 'Shop Dashboard')
 

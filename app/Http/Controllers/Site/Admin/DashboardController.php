@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Shop\Admin;
+namespace App\Http\Controllers\Site\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -19,6 +19,6 @@ class DashboardController extends Controller
 
     public function home()
     {
-        return view('shop.admin.dashboard');
+        return view('site.admin.dashboard');
     }
 }

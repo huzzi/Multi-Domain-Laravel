@@ -2,9 +2,9 @@
 
 namespace App\Http;
 
-use App\Http\Middleware\CheckShopDomain;
+use App\Http\Middleware\CheckSiteDomain;
 use App\Http\Middleware\IsAppAdmin;
-use App\Http\Middleware\IsShopManager;
+use App\Http\Middleware\IsSiteManager;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -62,8 +62,8 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'shop.domain' => CheckShopDomain::class,
-        'shop.is_manager' => IsShopManager::class,
+        'site.domain' => CheckSiteDomain::class,
+        'site.is_manager' => IsSiteManager::class,
         'app.is_admin' => IsAppAdmin::class,
     ];
 }

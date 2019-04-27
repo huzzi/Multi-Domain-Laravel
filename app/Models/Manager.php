@@ -1,11 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Customer extends Model
+class Manager extends Model
 {
+
     public function assignUser(User $user)
     {
         $this->user_id = $user->id;
@@ -13,9 +14,14 @@ class Customer extends Model
         $this->contact_email = $user->email;
     }
 
-    public function shop()
+    public function site()
     {
-        return $this->belongsTo('App\Shop');
+        return $this->belongsTo('App\Models\Site');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
     }
 
 }

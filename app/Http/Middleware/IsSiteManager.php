@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class IsShopManager
+class IsSiteManager
 {
     /**
      * Handle an incoming request.
@@ -16,11 +16,11 @@ class IsShopManager
     public function handle($request, Closure $next)
     {
         $subdomain = $request->route('subdomain');
-        if (auth()->check() && auth()->user()->isShopManager()) {
+        if (auth()->check() && auth()->user()->isSiteManager()) {
             return $next($request);
         }
         if ($subdomain) {
-            return redirect()->route('shop.home', ['domain' => $subdomain]);
+            return redirect()->route('site.home', ['domain' => $subdomain]);
         }
         return redirect()->route('app.home');
     }

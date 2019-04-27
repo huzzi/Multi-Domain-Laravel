@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -32,9 +32,9 @@ class User extends Authenticatable
         return $this->first_name . ' ' . $this->last_name;
     }
 
-    public function isShopManager()
+    public function isSiteManager()
     {
-        return shop()->managers()->where('user_id', $this->id)->first();
+        return site()->managers()->where('user_id', $this->id)->first();
     }
 
     public function initials()
@@ -44,12 +44,12 @@ class User extends Authenticatable
 
     public function customers()
     {
-        return $this->hasMany('App\Customer');
+        return $this->hasMany('App\Models\Customer');
     }
 
     public function managers()
     {
-        return $this->hasMany('App\Manager');
+        return $this->hasMany('App\Models\Manager');
     }
 
     public function isAppAdmin()
