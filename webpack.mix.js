@@ -18,12 +18,12 @@ mix.js('resources/assets/app/js/app.js', 'public/app/js')
 
 
 /*  SHOP FRONTEND  */
-mix.js('resources/assets/shop/js/app.js', 'public/shop/js')
+mix.js('resources/assets/site/js/app.js', 'public/site/js')
     .sass('resources/assets/shop/sass/app.scss', 'public/shop/css');
 
 /*  SHOP ADMIN  */
-mix.js('resources/assets/shop/admin/js/app.js', 'public/shop/admin/js')
-    .sass('resources/assets/shop/admin/sass/app.scss', 'public/shop/admin/css');
+mix.js('resources/assets/site/admin/js/app.js', 'public/site/admin/js')
+    .sass('resources/assets/shop/admin/sass/app.scss', 'public/site/admin/css');
 
 /*  APPLICATION ADMIN  */
 mix.js('resources/assets/admin/js/app.js', 'public/app_admin/js')

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Shop\Auth;
+namespace App\Http\Controllers\Site\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -19,7 +19,7 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        return view('shop.login');
+        return view('site.login');
     }
 
     public function handleLogin(Request $request)
@@ -35,7 +35,7 @@ class LoginController extends Controller
 
         $credentials = $request->only('email', 'password');
         if (auth()->attempt($credentials, $isRemember)) {
-            return redirect()->intended(route('shop.home', ['domain' => domain()]));
+            return redirect()->intended(route('site.home', ['domain' => domain()]));
         }
         return redirect()->back()->withInput()->withErrors(['login_error' => ['Wrong email or password']]);
     }
@@ -43,6 +43,6 @@ class LoginController extends Controller
     public function logout()
     {
         auth()->logout();
-        return redirect()->route('shop.home', ['domain' => domain()]);
+        return redirect()->route('site.home', ['domain' => domain()]);
     }
 }

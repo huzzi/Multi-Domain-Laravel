@@ -15,7 +15,7 @@ class ComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer(
-            ['shop.*', 'admin.*'],
+            ['site.*', 'admin.*'],
             'App\Http\ViewComposers\ProfileComposer'
         );
     }

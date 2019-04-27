@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class CheckShopDomain
+class CheckSiteDomain
 {
     /**
      * Handle an incoming request.
@@ -17,8 +17,8 @@ class CheckShopDomain
     {
 
         $subdomain = $request->route('subdomain');
-        $shop = \App\Shop::where('domain', $subdomain)->first();
-        if (!$shop) {
+        $site = \App\Models\Site::where('domain', $subdomain)->first();
+        if (!$site) {
             // @todo redirect to not exists page
             return redirect()->route('app.home');
         }

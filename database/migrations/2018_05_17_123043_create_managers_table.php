@@ -15,7 +15,7 @@ class CreateManagersTable extends Migration
     {
         Schema::create('managers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('shop_id')->nullable();
+            $table->unsignedBigInteger('site_id')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->string('contact_name')->nullable();
             $table->string('contact_email')->nullable();

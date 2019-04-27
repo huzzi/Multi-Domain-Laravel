@@ -49,35 +49,35 @@ Route::group(
 Route::group(
     [
         'domain' => '{subdomain}.' . config('app.domain'),
-        'middleware' => 'shop.domain',
-        'as' => 'shop.'
+        'middleware' => 'site.domain',
+        'as' => 'site.'
     ], function () {
 
-    // Shop frontend
-    Route::get('/', 'Shop\PageController@home')->name('home');
+    // Site frontend
+    Route::get('/', 'Site\PageController@home')->name('home');
 
     // @todo: products, cart, checkout, etc
     // @todo: customer account, orders history, order details, settings
 
 
     // Authentication and registration
-    Route::get('/login', 'Shop\Auth\LoginController@showLoginForm')->name('login');
-    Route::post('/login', 'Shop\Auth\LoginController@handleLogin')->name('login.post');
-    Route::get('/registration', 'Shop\Auth\RegistrationController@showRegistrationForm')->name('registration');
-    Route::post('/registration', 'Shop\Auth\RegistrationController@handleRegistration')->name('registration.post');
-    Route::post('/logout', 'Shop\Auth\LoginController@logout')->name('logout');
+    Route::get('/login', 'Site\Auth\LoginController@showLoginForm')->name('login');
+    Route::post('/login', 'Site\Auth\LoginController@handleLogin')->name('login.post');
+    Route::get('/registration', 'Site\Auth\RegistrationController@showRegistrationForm')->name('registration');
+    Route::post('/registration', 'Site\Auth\RegistrationController@handleRegistration')->name('registration.post');
+    Route::post('/logout', 'Site\Auth\LoginController@logout')->name('logout');
 
 
-    // SHOP MANAGEMENT
+    // Site MANAGEMENT
     Route::group(
         [
             'prefix' => 'admin',
-            'middleware' => ['auth', 'shop.is_manager'],
+            'middleware' => ['auth', 'site.is_manager'],
             'as' => 'admin.'
         ],
         function () {
 
-            Route::get('/', 'Shop\Admin\DashboardController@home')->name('home');
+            Route::get('/', 'Site\Admin\DashboardController@home')->name('home');
 
             // @todo: orders, customers, staff members, etc
 
